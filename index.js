@@ -36,9 +36,15 @@ else if (cart.length>=3){
    string+=` ${cart[i].itemName} at $${cart[i].itemPrice},`}
    let stringTwo=(`and ${cart[cart.length-1].itemName} at $${cart[cart.length-1].itemPrice}.`)
   return `In your cart, you have${string} ${stringTwo}`
+<<<<<<< HEAD
+=======
+}
+  
+>>>>>>> e54581defa7a002bde2be421dc5e48cfcae9cfe9
 }
   
 }
+
 
 
 function total() {
@@ -47,6 +53,7 @@ function total() {
     total+= cart[i].itemPrice
   }
   return total
+<<<<<<< HEAD
 }
 
 function itemSearch(itemName){
@@ -72,6 +79,33 @@ function removeItemFromCart(itemToRemove) {
   var itemToRemove = itemSearch(itemName)
   return itemToRemove ? removeItemFromCart(itemToRemove) : notifyUserThereIsNoItemToRemove()
 }
+=======
+}
+
+function itemSearch(itemName){
+  var search=''
+  for(let i =0; i<getCart().length;i++){
+    if (getCart()[i].itemName===itemName)
+      search=getCart()[i]}
+    return search
+   } 
+   
+   function notifyUserThereIsNoItemToRemove() {
+  return 'That item is not in your cart.'
+}
+
+function removeItemFromCart(itemToRemove) {
+  var indexOfItemToRemove = cart.indexOf(itemToRemove)
+  getCart().splice(indexOfItemToRemove,1)
+}
+
+   
+   
+   function removeFromCart(itemName) {
+  var itemToRemove = itemSearch(itemName)
+  return itemToRemove ? removeItemFromCart(itemToRemove) : notifyUserThereIsNoItemToRemove()
+}
+>>>>>>> e54581defa7a002bde2be421dc5e48cfcae9cfe9
     
   
 function placeOrder(cardNumber){
@@ -79,11 +113,22 @@ function placeOrder(cardNumber){
    return 'Sorry, we don\'t have a credit card on file for you.'
  } 
  else{
+<<<<<<< HEAD
    var sumCharge=total()
    cart=[]
    return `Your total cost is $${sumCharge}, which will be charged to the card ${cardNumber}.`
+=======
+   cart=[]
+   return `Your total cost is $${total}, which will be charged to the card ${cardNumber}.`
+>>>>>>> e54581defa7a002bde2be421dc5e48cfcae9cfe9
  }
 }
 
 
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> e54581defa7a002bde2be421dc5e48cfcae9cfe9
   
